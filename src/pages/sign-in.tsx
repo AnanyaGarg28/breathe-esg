@@ -1,6 +1,6 @@
 export default function SignIn() {
   return (
-    <div className="signin">
+    <div className="authpage">
       <div className="welcome-div">
         <div className="welcome-text">Welcome to</div>
         <div className="logo">
@@ -15,9 +15,9 @@ export default function SignIn() {
           <a href="">Get in touch!</a>
         </div>
       </div>
-      <div className="signin-div">
+      <div className="auth-div">
         <img className="globeImage" src="/images/globe-logo.png" alt="" />
-        <div className="signin-box">
+        <div className="auth-box">
           <div className="heading-div">
             <div className="heading">Login</div>
             <div className="subtext">
@@ -40,14 +40,14 @@ export default function SignIn() {
               <input type="email" placeholder="Password" />
             </div>
           </div>
-          <div className="external-signin-container">
-            <div className="external-signin-div">
+          <div className="external-auth-container">
+            <div className="external-auth-div">
                 <img src="https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA" alt="" />
-                <span className="external-signin-text">Sign up with Google</span>
+                <span className="external-auth-text">Sign up with Google</span>
             </div>
-            <div className="external-signin-div">
+            <div className="external-auth-div">
                 <img src="/images/x-logo.png" alt="" />
-                <span className="external-signin-text">Sign up with X</span>
+                <span className="external-auth-text">Sign up with X</span>
             </div>
           </div>
           <div className="submit-div">
