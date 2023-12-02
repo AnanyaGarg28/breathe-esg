@@ -1,6 +1,10 @@
 @import "./variables";
 @import "./global";
 @import "./pages/auth";
+@import "./pages/home/index";
+@import "./components/sidebar";
+@import "./components/userHeader";
+@import "./components/logoWhite";
 
 .app-wrapper {
   display: flex;

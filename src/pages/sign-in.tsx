@@ -1,11 +1,13 @@
+import LogoWhite from "../components/logo-white";
+
+
 export default function SignIn() {
   return (
     <div className="authpage">
       <div className="welcome-div">
         <div className="welcome-text">Welcome to</div>
-        <div className="logo">
-          <img src="/images/logo-horizontal.png" alt="logo" />
-          <img src="/images/mask-group.png" className="text-logo" />
+        <div className="auth-logo">
+            <LogoWhite />
         </div>
         <div className="tagline">
           We help you track your organisations metrics as per the ESG Guidelines

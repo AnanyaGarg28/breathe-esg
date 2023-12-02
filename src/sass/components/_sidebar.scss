@@ -1,0 +1,74 @@
+.sidebar-wrapper {
+  position: relative;
+  background-color: $Black18;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+  .sidebar {
+    padding: 24px 24px 40px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    gap: 80px;
+    height: 100%;
+    width: 200px;
+    .app-logo {
+      height: 18px;
+    }
+    .sidebar-contents {
+      .sidebar-list-item {
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        color: $White;
+        opacity: 0.7;
+        font-size: 12px;
+
+        .sidebar-list-logo {
+          color: $White;
+        }
+      }
+      .sidebar-list-item-active {
+        .sidebar-list-logo {
+          color: $BlockUI-green;
+        }
+        .sidebar-list-text {
+          color: $TextUI-Green;
+        }
+      }
+      .sidebar-list-item-logout {
+        color: $Error-Red-trial;
+      }
+    }
+  }
+  .sidebar-closed {
+    display: none;
+  }
+  .collapse-button {
+    position: absolute;
+    top: 60px;
+    border: none;
+    width: 24px;
+    height: 24px;
+    overflow: none;
+    background: $Black18;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  .collapsed {
+    img {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+    right: -20px;
+  }
+  .not-collapsed {
+    right: -12px;
+  }
+}

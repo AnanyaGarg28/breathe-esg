@@ -7,6 +7,7 @@ import store from "./store";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignIn from "./pages/sign-in";
 import SignUp from "./pages/sign-up";
+import "./sass/app.scss";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

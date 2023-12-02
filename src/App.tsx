@@ -1,13 +1,10 @@
 import React from 'react';
-import "./sass/app.scss";
-import { Button } from 'antd';
+import Home from './pages/home';
 
 function App() {
   return (
     <div className="App">
-      <div className="app-wrapper">
-        <Button>Getting Started...</Button>
-      </div>
+      <Home />
     </div>
   );
 }

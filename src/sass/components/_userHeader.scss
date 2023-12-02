@@ -1,0 +1,81 @@
+.user-header {
+  display: flex;
+  align-self: stretch;
+  justify-content: space-between;
+  .app-options {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    .viewname {
+      position: relative;
+      padding-left: 18px;
+      overflow: hidden;
+      img {
+        height: 18px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      div {
+        padding-left: 20px;
+        color: $Dark-Grey;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 150%;
+        background: $White;
+        position: relative;
+        z-index: 10;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .dropdown {
+      display: flex;
+      padding: 8px 16px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 4px;
+      border: 1px solid #c9c9c9;
+      font-size: 12px;
+      line-height: 150%;
+      color: $Dark-Grey;
+    }
+  }
+  .user-options {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+    justify-content: center;
+
+    .notifications {
+      width: 16.5px;
+      height: 18.33px;
+        img {
+            width: 16.5px;
+            height: 18.33px;
+        }
+    }
+
+    .avatar {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        color: $Grey;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 150%; /* 21px */
+            img {
+                width: 32px;
+                height: 32px;
+                border-radius: 100%;
+            }
+    }
+  }
+}

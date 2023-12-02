@@ -1,0 +1,15 @@
+.logo-white {
+    margin-top: 16px;
+    flex-shrink: 0;
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    img {
+      height: 100%;
+    }
+    .text-logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }

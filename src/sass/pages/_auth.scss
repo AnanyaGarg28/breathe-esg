@@ -16,22 +16,9 @@
       font-weight: 400;
       text-transform: uppercase;
     }
-
-    .logo {
-      margin-top: 16px;
-      flex-shrink: 0;
-      position: relative;
-      display: inline-block;
-      img {
-        height: 42px;
-      }
-      .text-logo {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
+    .auth-logo {
+      height: 42px;
     }
-
     .tagline {
       margin-top: 32px;
       color: $Grey;
