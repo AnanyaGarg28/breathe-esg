@@ -34,7 +34,7 @@ export default function SignIn() {
         </div>
         <div className="get-in-touch">
           <span>Sounds Interesting?</span>
-          <a href="">Get in touch!</a>
+          <a href="/">Get in touch!</a>
         </div>
       </div>
       <div className="auth-div">
@@ -89,7 +89,7 @@ export default function SignIn() {
           <div className="submit-div">
             <div className="contact-us">
               <span>Having trouble logging in? </span>
-              <a href="" className="contact-us-anchor">
+              <a href="/" className="contact-us-anchor">
                 Contact Us
               </a>
             </div>

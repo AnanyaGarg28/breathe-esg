@@ -149,8 +149,8 @@ export default function DataEntry() {
             action: {
                 customComponent: (
                     <div className="action-container">
-                        <img src="/images/home/data-manager/share.svg"/>
-                        <img src="/images/home/data-manager/delete.svg"/>
+                        <img src="/images/home/data-manager/share.svg" alt="share"/>
+                        <img src="/images/home/data-manager/delete.svg" alt="delete"/>
                     </div>
                 ),
                 value:null,

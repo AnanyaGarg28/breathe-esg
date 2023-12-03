@@ -1,4 +1,4 @@
-import { ActionCreatorWithPayload, createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const signInThunk = createAsyncThunk(
   "auth/signInThunk",

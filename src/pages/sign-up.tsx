@@ -33,7 +33,7 @@ export default function SignUp() {
         </div>
         <div className="get-in-touch">
           <span>Sounds Interesting?</span>
-          <a href="">Get in touch!</a>
+          <a href="/">Get in touch!</a>
         </div>
       </div>
       <div className="auth-div">
