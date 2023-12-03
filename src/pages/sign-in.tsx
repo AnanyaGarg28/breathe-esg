@@ -1,7 +1,18 @@
+import { useDispatch } from "react-redux";
 import LogoWhite from "../components/logo-white";
+import { signInThunk } from "../redux/auth/authThunk";
+import { useState } from "react";
+import { setJWT, setUserData } from "../redux/auth/authSlice";
 
 
 export default function SignIn() {
+  const dispatch = useDispatch();
+
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+
   return (
     <div className="authpage">
       <div className="welcome-div">
@@ -32,14 +43,14 @@ export default function SignIn() {
                 <span>Email</span>
                 <span className="required"> *</span>
               </div>
-              <input type="email" placeholder="Your Email ID" />
+              <input value={email} onChange={e=>setEmail(e.target.value)} type="email" placeholder="Your Email ID" />
             </div>
             <div className="input-div">
               <div className="input-heading">
                 <span>Password</span>
                 <span className="required"> *</span>
               </div>
-              <input type="email" placeholder="Password" />
+              <input value={password} onChange={e=>setPassword(e.target.value)} type="password" placeholder="Password" />
             </div>
           </div>
           <div className="external-auth-container">
