@@ -1,3 +1,7 @@
+/**
+ * Renders a white logo component.
+ * @returns The white logo component.
+ */
 export default function LogoWhite() {
     return (
         <div className="logo-white">

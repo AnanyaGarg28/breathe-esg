@@ -7,6 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../store";
 import { setSubSection } from "../../../redux/nav/navSlice";
 
+/**
+ * Represents an array of sub-sections.
+ */
 const subSections = [
     {
       id: 1,
@@ -30,6 +33,10 @@ const subSections = [
     },
 ];
 
+/**
+ * Represents the data manager header component.
+ * This component displays the header section of the data manager page.
+ */
 export const DataManagerHeader: React.FC = () => {
   const [selected, setSelected] = useState("1");
   const activeSubSectionId = useSelector((state: RootState) => state.nav.currentSubSection);
@@ -90,6 +97,10 @@ export const DataManagerHeader: React.FC = () => {
   );
 };
 
+/**
+ * Represents the data manager component.
+ * This component displays the main content of the data manager page.
+ */
 export const DataManager: React.FC = () => {
   const activeSubSectionId = useSelector((state: RootState) => state.nav.currentSubSection);
   const activeSubSection = subSections.find((item) => item.id === activeSubSectionId);

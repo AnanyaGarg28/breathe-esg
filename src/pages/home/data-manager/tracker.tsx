@@ -1,7 +1,15 @@
 import { SearchOutlined } from "@ant-design/icons";
 import Table from "../../../components/table";
+import { jsonToCSV } from "../../../util";
 
+/**
+ * Represents the Tracker component.
+ * This component displays a table with tracker data.
+ */
 export default function Tracker() {
+  /**
+   * Represents dummy data for the tracker.
+   */
   const dummyData = [
     {
       month: "Jan 2023",
@@ -48,6 +56,7 @@ export default function Tracker() {
         <div className="autosave">Autosaved at 12:31 pm</div>
       </div>
       <Table
+        csv = {jsonToCSV(dummyData)}
         columns={[
           {
             accessor: "month",

@@ -2,6 +2,7 @@ import { Dropdown } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import { useState } from "react";
 
+
 const items = [
   {
     key: "1",
@@ -10,6 +11,10 @@ const items = [
   },
 ];
 
+/**
+ * UserHeader component.
+ * @returns JSX.Element
+ */
 export default function UserHeader() {
   const [selected, setSelected] = useState("1");
   const activeItem = items.find((item) => item.key === selected);

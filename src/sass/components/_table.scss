@@ -1,3 +1,13 @@
+.download-csv {
+  margin: auto;
+  .download-csv-button {
+    background-color: $TextUI-Green;
+    color: $White;
+    padding: 16px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+}
 .custom-table {
   table-layout: auto;
   .sortable {

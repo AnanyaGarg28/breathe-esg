@@ -1,5 +1,8 @@
 import { DataManager, DataManagerHeader } from "./data-manager";
 
+/**
+ * Represents the sections of the home page.
+ */
 const sections: {
   id: number;
   name: string;

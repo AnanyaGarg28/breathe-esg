@@ -7,6 +7,10 @@ import { AppDispatch, RootState } from "../store";
 import { Loading } from "../components/loading";
 import { Navigate } from "react-router-dom";
 
+/**
+ * Sign-in page component.
+ * Renders a sign-in form and handles user authentication.
+ */
 export default function SignIn() {
   const usedispatch: () => AppDispatch = useDispatch;
   const dispatch = usedispatch();
@@ -16,6 +20,10 @@ export default function SignIn() {
   const [error, setError] = useState<string>("");
   const status = useSelector((state: RootState) => state.auth.status);
 
+  /**
+   * Retrieves the authorization status from the Redux store.
+   * @returns {boolean} The authorization status.
+   */
   const isAuthorized = useSelector(
     (state: RootState) => state.auth.isAuthorized
   );

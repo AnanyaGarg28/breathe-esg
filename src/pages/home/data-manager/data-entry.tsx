@@ -1,5 +1,10 @@
 import Table from "../../../components/table";
+import { jsonToCSV } from "../../../util";
 
+/**
+ * Renders the header for the data entry section.
+ * @returns JSX.Element
+ */
 export const DataEntryHeader = () => {
   return (
     <>
@@ -9,6 +14,10 @@ export const DataEntryHeader = () => {
   )
 };
 
+/**
+ * Renders the data entry component.
+ * @returns JSX.Element
+ */
 export default function DataEntry() {
   const dummyData: {
     assessmentTitle: string;
@@ -78,6 +87,7 @@ export default function DataEntry() {
   return (
     <div className="data-entry">
       <Table
+        csv={jsonToCSV(dummyData)}
         data={dummyData.map(
           ({
             assessmentTitle,

@@ -6,6 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../redux/auth/authSlice";
 import { setSection } from "../redux/nav/navSlice";
 
+/**
+ * Sidebar component that displays a sidebar with navigation items and a collapse button.
+ */
 export default function SideBar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const activeSection = useSelector((state: RootState) => state.nav.currentSection);

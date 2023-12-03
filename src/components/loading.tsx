@@ -1,3 +1,7 @@
+/**
+ * Renders a loading spinner component.
+ * @returns JSX.Element
+ */
 export const Loading = () => {
     return(
         <div onClick={e=>e.stopPropagation()} className="loading-wrapper">

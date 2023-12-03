@@ -2,7 +2,12 @@ import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./redux/auth/authSlice";
 import navReducer from "./redux/nav/navSlice";
 
-//root reducer
+/**
+ * Creates a Redux store with the specified reducers.
+ *
+ * @param {Object} reducer - The reducers to be combined into the store.
+ * @returns {Object} - The Redux store.
+ */
 const store = configureStore({
   reducer: {
     auth: authReducer,

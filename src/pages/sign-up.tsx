@@ -7,6 +7,11 @@ import { AppDispatch, RootState } from "../store";
 import { Loading } from "../components/loading";
 import { Navigate } from "react-router-dom";
 
+/**
+ * Sign up page component.
+ * Allows users to sign up with their email and password.
+ * If the user is already authorized, it redirects to the home page.
+ */
 export default function SignUp() {
   const usedispatch: () => AppDispatch = useDispatch;
   const dispatch = usedispatch();
@@ -15,11 +20,11 @@ export default function SignUp() {
   const [password, setPassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
-  const status = useSelector((state: RootState)=>state.auth.status);
+  const status = useSelector((state: RootState) => state.auth.status);
 
-  const isAuthorized = useSelector((state: RootState)=>state.auth.isAuthorized);
+  const isAuthorized = useSelector((state: RootState) => state.auth.isAuthorized);
 
-  if(isAuthorized) return <Navigate to='/' />;
+  if (isAuthorized) return <Navigate to="/" />;
 
   return (
     <div className="authpage">
@@ -51,52 +56,65 @@ export default function SignUp() {
                 <span>Email</span>
                 <span className="required"> *</span>
               </div>
-              <input value={email} onChange={e=>setEmail(e.target.value)} type="email" placeholder="Your Email ID" />
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                placeholder="Your Email ID"
+              />
             </div>
             <div className="input-div">
               <div className="input-heading">
                 <span>Password</span>
                 <span className="required"> *</span>
               </div>
-              <input value={password} onChange={e=>setPassword(e.target.value)} type="password" placeholder="Password" />
+              <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                type="password"
+                placeholder="Password"
+              />
             </div>
             <div className="input-div">
               <div className="input-heading">
                 <span>Confirm Password</span>
                 <span className="required"> *</span>
               </div>
-              <input value={confirmPassword} onChange={e=>setConfirmPassword(e.target.value)} type="password" placeholder="Password" />
+              <input
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                type="password"
+                placeholder="Password"
+              />
             </div>
-            {
-              error && (
-                <div className="error-div">
-                  {error}
-                </div>
-              )
-            }
+            {error && <div className="error-div">{error}</div>}
           </div>
           <div className="submit-div">
-            <button onClick={()=>{
-              if(password===confirmPassword){
-                dispatch(signUpThunk({
-                  email, 
-                  password
-                })).then((data: any)=>{
-                  if(data.payload.token) {
-                    dispatch(setJWT(data.payload.token));
-                    dispatch(setUserData());
-                  }
-                  else setError(data.payload.error);
-                });
-              }else{
-                setError("Passwords do not match");
-              }
-            }}>Continue</button>
+            <button
+              onClick={() => {
+                if (password === confirmPassword) {
+                  dispatch(
+                    signUpThunk({
+                      email,
+                      password,
+                    })
+                  ).then((data: any) => {
+                    if (data.payload.token) {
+                      dispatch(setJWT(data.payload.token));
+                      dispatch(setUserData());
+                    } else setError(data.payload.error);
+                  });
+                } else {
+                  setError("Passwords do not match");
+                }
+              }}
+            >
+              Continue
+            </button>
           </div>
         </div>
       </div>
-      {status==="loading" && <Loading />}
+      {status === "loading" && <Loading />}
     </div>
   );
 }
-  
