@@ -1,4 +1,10 @@
 # Breathe ESG Frontend
+<div style="display: block"> 
+   <img src="https://github.com/AnanyaGarg28/breathe-esg/assets/92284167/76c9ed19-8b82-44f6-8e92-ba9e44ced552" style="width: 50%; display: inline"/>
+   <img src="https://github.com/AnanyaGarg28/breathe-esg/assets/92284167/f81055a2-cd32-48fb-91df-dc2bb1978bde" style="width: 50%; display: inline"/>
+   <img src="https://github.com/AnanyaGarg28/breathe-esg/assets/92284167/1da1162a-0d22-45e0-905b-2936760600b9" style="width: 50%; display: inline"/>
+   <img src="https://github.com/AnanyaGarg28/breathe-esg/assets/92284167/8474d432-5527-496f-8432-a894daeb0e37" style="width: 50%; display: inline"/>
+</div>
 
 ## Technologies Used
 
@@ -29,7 +35,7 @@
    - Utilization of TypeScript for type-safe JavaScript, enhancing code quality and maintainability.
 
 4. **Precisely Styled UI using Sass:**
-   - Thoroughly styled user interface adhering to the provided design specifications using Sass. [Figma Design Link](#)
+   - Thoroughly styled user interface adhering to the provided design specifications using Sass. [Figma Design Link](https://www.figma.com/file/I6pUagfeowlYopooKq4a78/Untitled?type=design&node-id=0-1&mode=design&t=IwvJT5RQxN1zj9Bz-0)
 
 5. **Deployed Frontend:**
    - The frontend is deployed on Netlify to provide a seamless user experience.
