@@ -46,6 +46,11 @@
       font-size: 12px;
       line-height: 150%;
       color: $Dark-Grey;
+      cursor: pointer;
+    }
+
+    .dropdown:hover {
+      opacity: 0.8;
     }
   }
   .user-options {

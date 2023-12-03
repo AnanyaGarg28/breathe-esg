@@ -1,5 +1,14 @@
 import Table from "../../../components/table";
 
+export const DataEntryHeader = () => {
+  return (
+    <>
+      <div className="seperator" />
+      <button>Submit for Approval</button>
+    </>
+  )
+};
+
 export default function DataEntry() {
   const dummyData: {
     assessmentTitle: string;

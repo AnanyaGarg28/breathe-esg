@@ -65,7 +65,8 @@ export default function Tracker() {
             accessor: "status",
             header: "Status",
             comparable: {
-              value: false,
+              value: true,
+              compare: (a, b) => (a.value >= b.value ? 1 : -1),
             },
           },
           {
@@ -84,7 +85,8 @@ export default function Tracker() {
             accessor: "businessUnit",
             header: "Business Unit",
             comparable: {
-              value: false,
+              value: true,
+              compare: (a, b) => (a.value >= b.value ? 1 : -1),
             },
           },
         ]}

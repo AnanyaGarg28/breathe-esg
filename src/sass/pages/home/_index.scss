@@ -28,21 +28,29 @@
           line-height: 150%; /* 19.5px */
           letter-spacing: 0.26px;
           text-transform: uppercase;
-          div{
+
+          div {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
+            cursor: pointer;
 
             img {
               width: 16px;
               height: 16px;
             }
           }
+
+          div:hover {
+            opacity: 0.8;
+          }
+
           .active {
             color: $TextUI-Green;
           }
         }
+
         .picker {
           display: flex;
           justify-content: center;
@@ -63,11 +71,15 @@
               border-radius: 4px;
               border: 1px solid #c9c9c9;
               color: var(--Dark-Grey, #333);
-              font-feature-settings: 'clig' off, 'liga' off;
+              font-feature-settings: "clig" off, "liga" off;
               font-size: 15px;
               font-weight: 700;
               line-height: 150%; /* 22.5px */
               color: $Dark-Grey;
+              cursor: pointer;
+            }
+            .dropdown:hover {
+              opacity: 0.8;
             }
           }
         }

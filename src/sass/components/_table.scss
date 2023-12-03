@@ -1,3 +1,9 @@
 .custom-table {
-    table-layout: auto;
+  table-layout: auto;
+  .sortable {
+    cursor: pointer;
+  }
+  .sortable:hover {
+    opacity: 0.8;
+  }
 }

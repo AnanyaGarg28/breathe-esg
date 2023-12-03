@@ -66,13 +66,22 @@ export default function Table({
             <th
               key={index}
               className={
-                index === 0
+                `${
+                  index === 0
                   ? "first-cell"
                   : index === columns.length - 1
                   ? "last-cell"
                   : ""
+                } ${
+                  column.comparable.value
+                    ? "sortable"
+                    : ""
+                }`
               }
-              onClick={() => setSortBy(column.accessor)}
+              onClick={() => {
+                if(column.comparable.value)
+                  setSortBy(column.accessor)
+              }}
             >
               {column.customComponent ? column.customComponent : column?.header}
               <span className={sortBy === column.accessor ? "" : "opacity-0"}>

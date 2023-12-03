@@ -78,6 +78,13 @@
   .action-container {
     display: flex;
     gap: 16px;
+
+    img {
+      cursor: pointer;
+    }
+    img:hover {
+      opacity: 0.8;
+    }
   }
   .status {
     font-size: 10px;

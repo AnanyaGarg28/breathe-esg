@@ -1,24 +1,33 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import LogoWhite from "../components/logo-white";
 import { signInThunk } from "../redux/auth/authThunk";
 import { useState } from "react";
 import { setJWT, setUserData } from "../redux/auth/authSlice";
-
+import { AppDispatch, RootState } from "../store";
+import { Loading } from "../components/loading";
+import { Navigate } from "react-router-dom";
 
 export default function SignIn() {
-  const dispatch = useDispatch();
+  const usedispatch: () => AppDispatch = useDispatch;
+  const dispatch = usedispatch();
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false);
+  const status = useSelector((state: RootState) => state.auth.status);
+
+  const isAuthorized = useSelector(
+    (state: RootState) => state.auth.isAuthorized
+  );
+
+  if (isAuthorized) return <Navigate to="/" />;
 
   return (
     <div className="authpage">
       <div className="welcome-div">
         <div className="welcome-text">Welcome to</div>
         <div className="auth-logo">
-            <LogoWhite />
+          <LogoWhite />
         </div>
         <div className="tagline">
           We help you track your organisations metrics as per the ESG Guidelines
@@ -43,35 +52,68 @@ export default function SignIn() {
                 <span>Email</span>
                 <span className="required"> *</span>
               </div>
-              <input value={email} onChange={e=>setEmail(e.target.value)} type="email" placeholder="Your Email ID" />
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                placeholder="Your Email ID"
+              />
             </div>
             <div className="input-div">
               <div className="input-heading">
                 <span>Password</span>
                 <span className="required"> *</span>
               </div>
-              <input value={password} onChange={e=>setPassword(e.target.value)} type="password" placeholder="Password" />
+              <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                type="password"
+                placeholder="Password"
+              />
             </div>
+            {error && <div className="error-div">{error}</div>}
           </div>
           <div className="external-auth-container">
             <div className="external-auth-div">
-                <img src="https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA" alt="" />
-                <span className="external-auth-text">Sign up with Google</span>
+              <img
+                src="https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA"
+                alt=""
+              />
+              <span className="external-auth-text">Sign up with Google</span>
             </div>
             <div className="external-auth-div">
-                <img src="/images/x-logo.png" alt="" />
-                <span className="external-auth-text">Sign up with X</span>
+              <img src="/images/x-logo.png" alt="" />
+              <span className="external-auth-text">Sign up with X</span>
             </div>
           </div>
           <div className="submit-div">
             <div className="contact-us">
-                <span>Having trouble logging in? </span>
-                <a href="" className="contact-us-anchor">Contact Us</a>
+              <span>Having trouble logging in? </span>
+              <a href="" className="contact-us-anchor">
+                Contact Us
+              </a>
             </div>
-            <button>Continue</button>
+            <button
+              onClick={() => {
+                dispatch(
+                  signInThunk({
+                    email,
+                    password,
+                  })
+                ).then((data: any) => {
+                  if (data.payload.token) {
+                    dispatch(setJWT(data.payload.token));
+                    dispatch(setUserData(data.payload.user));
+                  } else setError(data.payload.error);
+                });
+              }}
+            >
+              Continue
+            </button>
           </div>
         </div>
       </div>
+      {status === "loading" && <Loading />}
     </div>
   );
 }
