@@ -1,55 +1,10 @@
 import { useState } from "react";
 import LogoWhite from "./logo-white";
+import sections from "../pages/home/sections";
 
 export default function SideBar() {
-  const sidebarListItems = [
-    {
-      name: "Dashboard",
-      icon: "dashboard",
-      isActive: false,
-    },
-    {
-      name: "Entity Manager",
-      icon: "entity-manager",
-      isActive: false,
-    },
-    {
-      name: "Data Manager",
-      icon: "data-manager",
-      isActive: true,
-    },
-    {
-      name: "Entity Manager",
-      icon: "entity-manager",
-      isActive: false,
-    },
-    {
-      name: "Reporting",
-      icon: "reporting",
-      isActive: false,
-    },
-    {
-      name: "Materiality",
-      icon: "materiality",
-      isActive: false,
-    },
-    {
-      name: "Suppliers",
-      icon: "suppliers",
-      isActive: false,
-    },
-    {
-      name: "Analytics",
-      icon: "analytics",
-      isActive: false,
-    },
-    {
-      name: "Targets",
-      icon: "Targets",
-      isActive: false,
-    },
-  ];
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const activeSection = 3;
   return (
     <div className="sidebar-wrapper">
       <div className={`${isSidebarOpen ? "sidebar" : "sidebar-closed"}`}>
@@ -57,17 +12,17 @@ export default function SideBar() {
           <LogoWhite />
         </div>
         <div className="sidebar-contents">
-          {sidebarListItems.map((item) => (
+          {sections.map((item) => (
             <div
-              key={item.icon}
+              key={item.id}
               className={`sidebar-list-item ${
-                item.isActive ? "sidebar-list-item-active" : ""
+                item.id === activeSection ? "sidebar-list-item-active" : ""
               }`}
             >
               <div className="sidebar-list-logo">
                 <img
-                  src={`/images/home/sidebar/${item.icon}.svg`}
-                  alt={item.icon}
+                  src={item.icon}
+                  alt={item.name}
                 />
               </div>
               <span className="sidebar-list-text">{item.name}</span>

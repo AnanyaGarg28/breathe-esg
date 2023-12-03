@@ -1,0 +1,99 @@
+.data-entry {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  .custom-table {
+    height: fit-content;
+    font-size: 16px;
+    color: $Dark-Grey;
+    text-align: left;
+    line-height: 150%; /* 18px */
+    border-radius: 8px;
+    margin: 12px;
+    border-collapse: collapse;
+    overflow: hidden;
+
+    .first-cell {
+      padding-left: 24px;
+    }
+
+    .last-cell {
+      padding-right: 24px;
+    }
+    th {
+      color: var(--Dark-Grey, #333);
+      background-color: $Grey-light-Block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+    td {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+    tbody {
+      background: $White;
+    }
+  }
+  .assessment-title {
+    color: $TextUI-Green;
+    font-weight: 600;
+  }
+  .checkbox {
+    width: 16px;
+    height: 16px;
+  }
+  .risk-classification-cell {
+    display: flex;
+    gap: 6px;
+    justify-content: start;
+    align-items: center;
+    .risk-classification-dot {
+      border-radius: 100%;
+      width: 10px;
+      height: 10px;
+    }
+    .low-dot {
+      background: $BlockUI-green;
+    }
+    .medium-dot {
+      background-color: $Warning-Amber;
+    }
+    .high-dot {
+      background-color: $Error-Red-trial;
+    }
+  }
+  .result {
+    font-weight: 600;
+    .view-button {
+      color: $TextUI-Green;
+      border: none;
+      background-color: transparent;
+      text-align: start;
+      padding: 0;
+    }
+  }
+  .action-container {
+    display: flex;
+    gap: 16px;
+  }
+  .status {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 150%; /* 15px */
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 4px;
+    width: fit-content;
+  }
+  .pending-status {
+    background: rgba(240, 79, 109, 0.2);
+    color: $Error-Red;
+  }
+  .complete-status {
+    background: rgba(46, 152, 68, 0.2);
+    color: $TextUI-Green;
+  }
+}

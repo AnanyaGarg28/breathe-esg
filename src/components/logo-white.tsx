@@ -2,7 +2,7 @@ export default function LogoWhite() {
     return (
         <div className="logo-white">
           <img src="/images/logo-horizontal.png" alt="logo" />
-          <img src="/images/mask-group.png" className="text-logo" />
+          <img src="/images/mask-group.png" className="text-logo" alt="logo"/>
         </div>
     )
 }
